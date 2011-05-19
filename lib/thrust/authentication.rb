@@ -13,7 +13,11 @@ module Thrust
     end
 
     def service
+      puts UserServiceFactory.inspect
       @service ||= UserServiceFactory.getUserService
+
+
+      puts @service.inspect
 
       @service
     end
