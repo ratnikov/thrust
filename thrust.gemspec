@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
   s.files            = `git ls-files`.split("\n")
   s.test_files       = `git ls-files -- {spec,features}/*`.split("\n")
   s.rdoc_options     = ["--charset=UTF-8"]
-  s.require_path     = [ "lib", "vendor" ]
+  s.require_paths     = [ "lib", "vendor" ]
 end
