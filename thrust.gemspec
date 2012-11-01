@@ -12,4 +12,8 @@ Gem::Specification.new do |s|
   s.test_files       = `git ls-files -- {spec,features}/*`.split("\n")
   s.rdoc_options     = ["--charset=UTF-8"]
   s.require_paths  << "vendor"
+
+  s.add_dependency 'actionpack'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'database_cleaner'
 end
