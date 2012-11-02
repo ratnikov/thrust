@@ -1,5 +1,5 @@
 module Thrust
-  VERSION = '0.0.1'
+  VERSION = '0.0.2.pre'
 
   module Jars
     PRODUCTION_JARS = [ 'appengine-api.jar' ]
