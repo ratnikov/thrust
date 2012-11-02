@@ -11,7 +11,7 @@ module Thrust::Datastore
     def get(key)
       log(:get, :key => key) { datastore.get(key) }.properties
     rescue EntityNotFoundException => error
-      key = error.cause.key
+      key = error.key
       raise RecordNotFound, "Could not find record with ID=#{key.get_id}, KIND=#{key.kind}"
     end
 
