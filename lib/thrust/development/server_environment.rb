@@ -6,7 +6,7 @@ module Thrust::Development
     include com.google.appengine.tools.development.LocalServerEnvironment
 
     def app_dir
-      java.io.File.new File.join(Rails.root, 'tmp')
+      java.io.File.new tmpdir
     end
 
     def current_app_id
@@ -15,6 +15,22 @@ module Thrust::Development
 
     def enforce_api_deadlines
       false
+    end
+
+    def simulate_production_latencies
+      true
+    end
+
+    private
+
+    def tmpdir
+      # TODO: probably better idea is to make this configurable and have a railtie setup rails defaults
+      if defined?(Rails)
+        File.join(Rails.root, 'tmp')
+      else
+        require 'tmpdir'
+        Dir.mktmpdir
+      end
     end
   end
 end
