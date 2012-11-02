@@ -24,7 +24,7 @@ module Thrust::Development
     return yield if @proxy # re-use already setup proxy
 
     begin
-      @proxy = ApiProxyLocalFactory.new.create ServerEnvironment.new
+      @proxy = ApiProxyLocalFactory.new.create server_environment
 
       ApiProxy.set_delegate @proxy
 
@@ -50,6 +50,10 @@ module Thrust::Development
     @environments ||= []
 
     @environments
+  end
+
+  def server_environment
+    @server_environment ||= ServerEnvironment.new
   end
 end
 

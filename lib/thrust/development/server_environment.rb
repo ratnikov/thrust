@@ -24,12 +24,14 @@ module Thrust::Development
     private
 
     def tmpdir
-      # TODO: probably better idea is to make this configurable and have a railtie setup rails defaults
-      if defined?(Rails)
-        File.join(Rails.root, 'tmp')
-      else
-        require 'tmpdir'
-        Dir.mktmpdir
+      @tmpdir ||= begin
+        # TODO: probably better idea is to make this configurable and have a railtie setup rails defaults
+        if defined?(Rails)
+          File.join(Rails.root, 'tmp')
+        else
+          require 'tmpdir'
+          Dir.mktmpdir
+        end
       end
     end
   end

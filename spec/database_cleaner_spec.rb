@@ -1,8 +1,5 @@
 require 'spec_helper'
 
-require 'database_cleaner'
-DatabaseCleaner[:datastore].strategy = :truncation
-
 describe DatabaseCleaner::Datastore do
   before { @connection = Thrust::Datastore.connection }
 

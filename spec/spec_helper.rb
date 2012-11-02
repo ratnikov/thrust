@@ -9,6 +9,9 @@ $LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'vendor')
 require 'thrust'
 require 'thrust/development'
 
+require 'database_cleaner'
+DatabaseCleaner[:datastore].strategy = :truncation
+
 RSpec.configure do |config|
   # enable thrust environment except for :thrust => false examples
   config.around do |example| 
@@ -18,4 +21,6 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.after { DatabaseCleaner.clean }
 end
