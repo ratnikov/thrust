@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    thrust (0.0.1)
+    thrust (0.0.2.pre)
       actionpack
 
 GEM
