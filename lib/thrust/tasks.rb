@@ -1,6 +1,6 @@
 require 'rake'
 
-require 'thrust/version'
+require 'thrust/constants'
 
 module Thrust
   module Tasks
@@ -18,7 +18,7 @@ module Thrust
     end
 
     def sdk_location
-      File.join 'sdk', File.basename(::Thrust::APPENGINE_JAVA_SDK_URL, '.zip')
+      File.join 'sdk', File.basename(::Thrust::Constants::APPENGINE_JAVA_SDK_URL, '.zip')
     end
   end
 end
@@ -28,7 +28,7 @@ task 'thrust' do
   mkdir 'sdk' unless File.exists?('sdk')
 
   Dir.chdir('sdk') do
-    sdk_url = ::Thrust::APPENGINE_JAVA_SDK_URL
+    sdk_url = ::Thrust::Constants::APPENGINE_JAVA_SDK_URL
 
     zipfile = File.basename(sdk_url)
 

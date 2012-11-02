@@ -9,11 +9,11 @@ task 'vendor-sdk' => 'thrust' do
 
   bundled_jars = Dir.glob('sdk/appengine-java-sdk*/lib/impl/**/*.jar')
 
-  bundled_jars.select { |jar| Thrust::Jars::PRODUCTION_JARS.include? File.basename(jar) }.each do |jar|
+  bundled_jars.select { |jar| Thrust::Constants::PRODUCTION_JARS.include? File.basename(jar) }.each do |jar|
     cp jar, jars_dir
   end
 
-  bundled_jars.select { |jar| Thrust::Jars::DEVELOPMENT_JARS.include? File.basename(jar) }.each do |jar|
+  bundled_jars.select { |jar| Thrust::Constants::DEVELOPMENT_JARS.include? File.basename(jar) }.each do |jar|
     cp jar, development_jars_dir
   end
 end

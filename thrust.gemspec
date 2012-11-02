@@ -1,4 +1,4 @@
-require File.expand_path('../lib/thrust/version', __FILE__)
+require File.expand_path('../lib/thrust/constants', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "thrust"
@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.description = "AppEngine API Wrapper"
 
   s.files            = Dir['lib/**/*'] + 
-    Thrust::Jars::PRODUCTION_JARS.map { |jar| File.join('vendor', 'appengine-java-sdk', jar) } +
-    Thrust::Jars::DEVELOPMENT_JARS.map { |jar| File.join('vendor', 'appengine-java-sdk', 'development', jar) }
+    Thrust::Constants::PRODUCTION_JARS.map { |jar| File.join('vendor', 'appengine-java-sdk', jar) } +
+    Thrust::Constants::DEVELOPMENT_JARS.map { |jar| File.join('vendor', 'appengine-java-sdk', 'development', jar) }
 
   s.test_files       = `git ls-files -- {spec,features}/*`.split("\n")
   s.rdoc_options     = ["--charset=UTF-8"]
