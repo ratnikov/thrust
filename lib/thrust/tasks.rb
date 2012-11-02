@@ -20,24 +20,7 @@ def sdk_location
 end
 
 namespace :thrust do
-  task 'install-sdk' do
-    system "mkdir -p sdk/"
-
-    Dir.chdir('sdk') do
-      zip_location = File.basename(SDK_LOCATION)
-
-      if File.exists? zip_location
-        puts "Using existing zip package..."
-      else
-        puts "Downloading appengine sdk from #{SDK_LOCATION}..."
-        system "curl #{SDK_LOCATION} -o #{zip_location}"
-      end
-
-      puts "Unpacking #{zip_location}..."
-      system "unzip -qq -o #{zip_location}"
-      puts "Done!"
-    end
-  end
+  require 'thrust/tasks/sdk'
 
   namespace :jetty do
     desc 'Run AppEngine development server without building new package'
