@@ -11,7 +11,7 @@ end
 require 'thrust/constants'
 
 Thrust::Constants::PRODUCTION_JARS.each do |jar|
-  require File.join('vendor', 'appengine-java-sdk', jar)
+  require File.join('appengine-java-sdk', jar)
 end
 
 require 'thrust/hacks'

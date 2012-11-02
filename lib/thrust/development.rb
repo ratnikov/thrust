@@ -1,7 +1,7 @@
 require 'thrust'
 
 Thrust::Constants::DEVELOPMENT_JARS.each do |jar|
-  require File.join('vendor', 'appengine-java-sdk', 'development', jar)
+  require File.join('appengine-java-sdk', 'development', jar)
 end
 
 module Thrust::Development
