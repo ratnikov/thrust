@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 require 'thrust/development'
+require 'capybara/rspec'
 
 describe Thrust::Development::Middleware, :type => :acceptance, :engage_thrust => false do
   class Application

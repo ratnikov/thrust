@@ -14,6 +14,8 @@ Gem::Specification.new do |s|
   s.require_paths  << "vendor"
 
   s.add_dependency 'actionpack'
-  s.add_development_dependency 'rspec'
+
+  s.add_development_dependency 'capybara'
   s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'rspec'
 end
