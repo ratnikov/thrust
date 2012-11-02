@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+require 'openssl'
+
 describe "Thrust hacks" do
   it "should be okay with default certificates directory load failing" do
     manager = Class.new(java.lang.SecurityManager) do
