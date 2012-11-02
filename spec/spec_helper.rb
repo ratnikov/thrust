@@ -2,6 +2,8 @@ require 'bundler/setup'
 
 require 'rspec'
 
+Dir['spec/support/**/*'].each { |support_file| require support_file }
+
 $LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'vendor')
 
 require 'thrust'
