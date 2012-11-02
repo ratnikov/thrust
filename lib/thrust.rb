@@ -1,15 +1,17 @@
 require 'java'
 
-Dir.glob(File.join(File.dirname(__FILE__), '..', 'vendor', 'appengine-java-sdk', '*.jar')).each do |jar|
-  require jar
-end
-
 require 'active_support/core_ext/class/attribute_accessors'
 
 module Thrust
   extend self
 
   attr_accessor :logger
+end
+
+require 'thrust/constants'
+
+Thrust::Constants::PRODUCTION_JARS.each do |jar|
+  require File.join('vendor', 'appengine-java-sdk', jar)
 end
 
 require 'thrust/hacks'

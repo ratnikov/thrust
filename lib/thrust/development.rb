@@ -1,7 +1,7 @@
 require 'thrust'
 
-Dir.glob(File.expand_path("../../../vendor/appengine*/development/**.jar", __FILE__)).each do |dev_jar|
-  require dev_jar
+Thrust::Constants::DEVELOPMENT_JARS.each do |jar|
+  require File.join('vendor', 'appengine-java-sdk', 'development', jar)
 end
 
 module Thrust::Development
